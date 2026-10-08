@@ -5,7 +5,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;transition:background .45s,color .45s;letter-spacing:-.018em;overflow-x:hidden}
-body.light{--bg:#f5efec;--card:#fffaf7;--border:#ded1ca;--text:#211916;--muted:#756966;--accent:#ed8f73;--button:#eee2dc;--nav:#fffaf7}
+body.light{--bg:#f5efec;--card:#eaf6ffaf7;--border:#ded1ca;--text:#211916;--muted:#756966;--accent:#ed8f73;--button:#eee2dc;--nav:#eaf6ffaf7}
 a{text-decoration:none;color:inherit}button{font:inherit;color:inherit}
 .nav{width:min(calc(100% - 48px),1200px);height:clamp(72px,8vw,118px);margin:clamp(18px,3vw,34px) auto 0;padding:0 clamp(14px,2.5vw,30px);border:1px solid var(--border);border-radius:999px;display:flex;align-items:center;justify-content:space-between;background:var(--nav);position:relative;z-index:4;transition:.45s}
 .nav-brand{display:flex;align-items:center;gap:clamp(10px,1.8vw,24px);font-size:clamp(18px,2.4vw,29px);font-weight:760;min-width:0}
@@ -77,3 +77,70 @@ footer{text-align:center;color:var(--muted);font:clamp(12px,1.7vw,20px) ui-monos
   .nav,main{width:calc(100% - 48px)}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+
+/* ===== Pastel Blue adaptive palette ===== */
+:root {
+  --blue-50: #f3faff;
+  --blue-100: #e4f4ff;
+  --blue-200: #cdeaff;
+  --blue-300: #b3dcff;
+  --blue-400: #91caff;
+  --blue-500: #72b8f5;
+  --blue-600: #559fe0;
+  --blue-700: #397fb9;
+  --blue-800: #285f8d;
+  --blue-900: #173f63;
+}
+
+html, body {
+  background: var(--blue-50);
+}
+
+body {
+  color: var(--blue-900);
+}
+
+a, button, .btn, .link, .accent {
+  color: var(--blue-700);
+}
+
+button, .btn {
+  border-color: var(--blue-300);
+}
+
+button:hover, .btn:hover,
+a:hover {
+  color: var(--blue-600);
+  border-color: var(--blue-400);
+}
+
+::selection {
+  background: var(--blue-300);
+  color: var(--blue-900);
+}
+
+/* Dark theme: blue instead of neutral/purple */
+html.dark, body.dark, [data-theme="dark"] {
+  background: #081a2b;
+  color: #dff2ff;
+}
+
+html.dark a, body.dark a, [data-theme="dark"] a {
+  color: #8dccff;
+}
+
+html.dark button, body.dark button,
+html.dark .btn, body.dark .btn,
+[data-theme="dark"] button, [data-theme="dark"] .btn {
+  color: #b9e2ff;
+  border-color: #285a82;
+}
+
+html.dark button:hover, body.dark button:hover,
+html.dark .btn:hover, body.dark .btn:hover,
+[data-theme="dark"] button:hover, [data-theme="dark"] .btn:hover {
+  background: rgba(112, 184, 245, .12);
+  border-color: #5b9fda;
+}
+
